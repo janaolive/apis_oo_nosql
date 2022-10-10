@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const iIVehicleSchema = z.object({
+export const iVehicleSchema = z.object({
   model: z.string({
     required_error: 'model is required',
     invalid_type_error: 'model must be a string',
@@ -18,4 +18,4 @@ export const iIVehicleSchema = z.object({
   buyValue: z.number().int(),
 });
 
-export type IVehicle = z.infer<typeof iIVehicleSchema>;
+export type IVehicle = z.infer<typeof iVehicleSchema>;
