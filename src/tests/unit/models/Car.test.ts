@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { Model } from 'mongoose';
 import CarModel from '../../../models/Cars';
-import { carMock, carMockResponse } from './mocks/Cars';
+import { carMock, carMockResponse } from './mocks/Car';
 
 describe('Car Model', () => {
   const carModel = new CarModel();
@@ -31,7 +31,7 @@ describe('Car Model', () => {
     try {
       await carModel.readOne('985B');
     } catch (error: any) {
-    expect(error.message).to.be.equal('InvalidMongoId');
+    expect(error.message).to.be.eq('InvalidMongoId');
     }
   });
 });

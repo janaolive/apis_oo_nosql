@@ -4,7 +4,7 @@ import { ZodError } from 'zod';
 import { ErrorTypes } from '../../../errors/Catalog';
 import CarModel from '../../../models/Cars';
 import CarService from '../../../services/Cars';
-import { carMock, carMockResponse, carMockError, carMockUpdate } from '../models/mocks/Cars';
+import { carMock, carMockResponse, carMockError, carMockUpdate } from '../models/mocks/Car';
 
 describe('Car Service', () => {
   const carModel = new CarModel();
@@ -48,16 +48,6 @@ describe('Car Service', () => {
   it('list car by id', async () => {
     const car = await carService.readOne(carMockResponse._id);
     expect(car).to.be.deep.equal(carMockResponse);
-  });
-
-  it('failure to list a car', async () => {
-    let error;
-    try {
-      await carService.readOne(carMockError as any);
-    } catch (err: any) {
-      error = err;    
-    }
-    expect(error).to.be.instanceOf(ZodError);
   });
 
   it('successful car update', async () => {

@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from 'express';
 import CarModel from '../../../models/Cars';
 import CarController from '../../../controllers/Cars';
 import CarService from '../../../services/Cars';
-import { carMock, carMockResponse, carMockUpdate } from '../models/mocks/Cars';
+import { carMock, carMockResponse, carMockUpdate } from '../models/mocks/Car';
 
 describe('Car Controller', () => {
   const carModel = new CarModel();
